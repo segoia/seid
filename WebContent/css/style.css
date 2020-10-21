@@ -1,0 +1,97 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #fff;
+	color: #5F5C52;
+	font-size: 1em;
+}
+
+.main-wrap{
+	overflow:hidden;
+}
+
+.center-extended {
+	width: 500%;
+	margin-left: -200%;
+	padding: 20px;
+	overflow-x:auto;
+	overflow-y:hidden;
+}
+
+.center {
+	margin: auto;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	
+}
+
+.content {
+	margin: auto;
+	max-width: 1024px;
+	padding:0 1.1em;
+	line-height: 1.5em;
+}
+
+article h1 {
+	margin-bottom: 4em;
+	margin-top: 4em;
+	text-align: center;
+}
+
+article h2, h3, h4, h5, h6 {
+	margin-bottom: 2em;
+	margin-top: 2em;
+}
+
+.desc {
+	font-size: 1em;
+	margin-bottom: 2em;
+	text-align: justify;
+	font-style: italic;
+}
+
+.diagram {
+/* 	margin: auto; */
+	display: inline-block;
+	margin-bottom: 2em;
+	
+}
+
+.diagram text tspan {
+	font-size: 0.8em;
+}
+
+.box {
+	padding: 1em;
+	border: dashed 1px gray;
+}
+
+.scrolling-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 64em) {
+	body{
+		font-size:0.8em;
+	}
+	
+	.diagram text tspan {
+		font-size: 1em;
+		
+	}
+}
+
+@media screen and (max-width: 32em) {
+	body{
+		font-size:0.8em;
+	}
+	
+	.diagram text tspan {
+		font-size: 0.6em;
+		
+	}
+}
+
+

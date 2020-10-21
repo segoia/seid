@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sistemul de evidență a identității digitale - principii,
+	arhitectură</title>
+
+<link rel="stylesheet" href="../../css/sequence-diagram.css" />
+<link rel="stylesheet" href="../../css/style.css" />
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/skel.min.js"></script>
+<script src="../../js/skel-layers.min.js"></script>
+<script src="../../js/webfont.js"></script>
+<script src="../../js/snap.svg-min.js"></script>
+<script src="../../js/underscore-min.js"></script>
+<script src="../../js/sequence-diagram-min.js"></script>
+<script src="../../js/marked.min.js"></script>
+
+<!-- <script src="../js/raphael-min.js"></script> -->
+<!-- <script src="../js/flowchart.min.js"></script> -->
+<!-- <script src="../js/flowchart.min.js.map"></script> -->
+<!-- <script src="http://flowchart.js.org/flowchart-latest.js"></script> -->
+
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+<script src="http://flowchart.js.org/flowchart-latest.js"></script>
+
+</head>
+<body>
+
+	<div class="main-wrap">
+
+		<div class="content">
+
+			<article>
+
+				<div id="preambul"></div>
+
+				<script>
+		    $("#preambul").load("preambul.md", function() {
+			$("#preambul").html(marked($("#preambul").html()));
+		    })
+		</script>
+
+				<div id="intro"></div>
+
+				<script>
+		    $("#intro").load("intro.md", function() {
+			$("#intro").html(marked($("#intro").html()));
+		    })
+		</script>
+
+				<div id="acronime"></div>
+
+				<script>
+		    $("#acronime").load("acronime.md", function() {
+// 			$("#acronime").html(marked($("#acronime").html()));
+		    })
+		</script>
+
+				<!-- înregistrare id -->
+				<div class="center">
+					<h2>Proces Înregistrare identitate digitală</h2>
+					<div class="desc">
+						Obiectivul principal al acestei etape este asocierea identității
+						digitale a cetățeanului, generată de aplicația de mobil AMID, cu
+						identitatea sa reală, din actul de identitate, în sistemul SEID.<br>
+						După acest pas, cetățeanul va putea folosi identitatea sa digitală
+						pentru a vota electronic sau pentru a accesa alte servicii
+						digitale.
+					</div>
+				</div>
+<!-- 				<div class="center-extended"> -->
+					<div class="center">
+					<div class="scrolling-wrapper">
+						<div id="register_id" class="diagram box"></div>
+						</div>
+					</div>
+<!-- 				</div> -->
+				<div class="center">
+					<div class="desc">
+						<span>Cazuri în care cererea poate fi răspinsă:</span>
+						<ul>
+							<li>Se încearcă înregistrarea cu un act de identitate
+								invalid ( expirat, contrafăcut, etc..)</li>
+							<li>Se încearcă înregistrarea cu un act de identitate deja
+								folosit pentru o înregistrare validă</li>
+							<li>Semnătura simplă adăugată cererii nu corespunde</li>
+							<li>Persoana care face cererea nu poate fi confirmată ca
+								fiind proprietarul actului de identitate încărcat - dacă se face
+								și recunoașterea video de un operator</li>
+						</ul>
+					</div>
+				</div>
+				<script>
+		    $("#register_id").load("seq/register_id.md", function() {
+			$("#register_id").sequenceDiagram({
+			    theme : 'simple'
+			});
+		    })
+		</script>
+
+				<!-- scenariu generic -->
+				<div class="center">
+					<h2>Proces generic de folosire a sistemului de evidență a identității
+						digitale</h2>
+					<div class="desc">Mai jos este exemplificat un proces generic
+						prin care un cetățean poate accesa un serviciu public(X) în format
+						digital folosindu-se de identitatea sa digitală din AMID, în
+						prealabil înregistrată în SEID.</div>
+				</div>
+<!-- 				<div class="center-extended"> -->
+					<div class="center">
+					<div class="scrolling-wrapper">
+						<div id="generic_usecase" class="diagram box"></div>
+						</div>
+					</div>
+				<!-- 				</div> -->
+				<div class="center">
+					<div class="desc">
+						<span>Scenarii posibile:</span>
+
+						<ul>
+							<li>Identitatea nu este înregistrată în SEID - se generează
+								un mesaj de eroare, cetățeanul este îndrumat să-și înregistreze
+								identitatea în SEID.</li>
+							<li>Identitatea este expirată sau are impuse anumite
+								restricții - SEID generează un mesaj de eroare corepsunzător</li>
+							<li>Identitatea este validă în SEID, dar nu îndeplinește
+								condițiile necesare accesării serviciului X - este generat un
+								mesaj de eroare corespunzător</li>
+							<li>Identitatea este validă și eligibilă pentru a accesa
+								serviciu X - cetățeanul este autentificat și procesul poate
+								continua normal, prin AMID sau printr-o altă aplicație</li>
+						</ul>
+
+					</div>
+				</div>
+				<script>
+		    $("#generic_usecase").load("seq/generic_usecase.md",
+			    function() {
+				$("#generic_usecase").sequenceDiagram({
+				    theme : 'simple'
+				});
+			    })
+		</script>
+
+
+<div id="impl"></div>
+
+				<script>
+		    $("#impl").load("implementation.md", function() {
+			$("#impl").html(marked($("#impl").html()));
+		    })
+		</script>
+
+			</article>
+		</div>
+	</div>
+
+</body>
+</html>
