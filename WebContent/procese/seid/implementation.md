@@ -10,4 +10,4 @@ Tehnologia este deja disponibilă și funcțională, e nevoie doar de voință l
 
 Aplicația Panoul de Bord poate fi instalată [aici](https://segoia.ro#apps).
 
-Dacă există interes la nivelul instituțiilor publice sau în rândul cetățenilor, putem face o implementare minimală pentru demonstra conceptul.
+Dacă există interes la nivelul instituțiilor publice sau în rândul cetățenilor, putem face o implementare minimală pentru a demonstra conceptul.
